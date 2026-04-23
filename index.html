@@ -3,50 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>技术支持 - TennisBee</title>
+    <title>Technical Support - TennisBee</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #f9f9f9; }
         .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h1 { border-bottom: 2px solid #34c759; padding-bottom: 10px; color: #34c759; font-size: 24px; }
+        h1 { border-bottom: 2px solid #007aff; padding-bottom: 10px; color: #007aff; font-size: 24px; }
         h2 { margin-top: 30px; color: #444; font-size: 18px; }
-        .faq-item { margin-bottom: 20px; padding: 15px; background: #f0fdf4; border-radius: 8px; }
-        .faq-q { font-weight: bold; color: #166534; display: block; margin-bottom: 5px; }
-        .contact-box { background: #34c759; color: white; padding: 20px; border-radius: 8px; text-align: center; margin-top: 40px; }
-        a { color: #34c759; text-decoration: none; }
+        .faq-item { margin-bottom: 20px; padding: 15px; background: #f0f7ff; border-radius: 8px; border-left: 4px solid #007aff; }
+        .faq-q { font-weight: bold; color: #0056b3; display: block; margin-bottom: 5px; }
+        .contact-box { background: #007aff; color: white; padding: 25px; border-radius: 8px; text-align: center; margin-top: 40px; }
+        a { color: #007aff; text-decoration: none; }
         .contact-box a { color: white; font-weight: bold; text-decoration: underline; }
         footer { margin-top: 50px; text-align: center; font-size: 0.9em; color: #888; }
+        /* 默认隐藏，由 JS 控制显示 */
+        #support-zh, #support-en { display: none; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div id="support-zh" class="container">
         <h1>TennisBee 技术支持</h1>
-        <p>欢迎来到网球印记 (TennisBee) 帮助中心。我们致力于为您提供最纯粹的网球训练体验。</p>
+        <p>欢迎来到网球印记 (TennisBee) 帮助中心。我们致力于为您提供最纯粹、最专业的网球训练体验。</p>
 
         <h2>常见问题 (FAQ)</h2>
         
         <div class="faq-item">
             <span class="faq-q">Q: 为什么 App 提示需要摄像头权限？</span>
-            <p>A: TennisBee 需要使用摄像头实时捕捉您的动作进行 AI 分析。由于我们是本地处理，视频画面不会被上传，请放心授权。</p>
+            <p>A: TennisBee 需要使用摄像头实时捕捉您的动作进行 AI 分析。由于我们采用本地处理技术，您的视频画面不会被录制或上传，请放心授权。</p>
         </div>
 
         <div class="faq-item">
             <span class="faq-q">Q: 离线状态下可以使用吗？</span>
-            <p>A: 完全可以。所有的识别算法和练习记录都在您的手机本地运行，无需互联网连接。</p>
+            <p>A: 完全可以。所有的识别算法和练习记录都在您的手机本地运行，无需互联网连接，适合在各种球场环境下使用。</p>
         </div>
 
         <div class="faq-item">
-            <span class="faq-q">Q: 如何获得最佳识别效果？</span>
-            <p>A: 建议将手机固定在侧方 3-5 米处，确保全身（从头到脚）都在画面内。光线充足的环境会提高识别准确度。</p>
+            <span class="faq-q">Q: 如何获得最佳的识别效果？</span>
+            <p>A: 建议将手机固定在身体侧方 3-5 米处，确保全身（从头到脚）都在画面内。光线充足、背景相对简单的环境会显著提高识别准确度。</p>
         </div>
 
         <div class="faq-item">
             <span class="faq-q">Q: 识别出的持拍手反了怎么办？</span>
-            <p>A: 您可以在“帮助中心”页面修改您的持拍手偏好（左手/右手），App 会自动调整识别逻辑。</p>
+            <p>A: 您可以在 App 的“帮助中心”页面修改您的持拍手偏好（左手/右手），系统会自动调整镜像识别逻辑。</p>
         </div>
 
         <div class="contact-box">
             <h3>仍有疑问？</h3>
-            <p>我们非常重视您的反馈，欢迎通过邮件联系开发者：</p>
+            <p>我们非常重视您的建议，欢迎通过邮件联系开发者：</p>
             <p><a href="mailto:TennisBee@qq.com">TennisBee@qq.com</a></p>
         </div>
 
@@ -54,5 +56,55 @@
             &copy; 2026 TennisBee. <a href="privacy.html">隐私政策</a>
         </footer>
     </div>
+
+    <div id="support-en" class="container">
+        <h1>TennisBee Technical Support</h1>
+        <p>Welcome to the TennisBee Help Center. We are dedicated to providing you with the purest and most professional tennis training experience.</p>
+
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        
+        <div class="faq-item">
+            <span class="faq-q">Q: Why does the app require camera permission?</span>
+            <p>A: TennisBee needs camera access to capture your movements for real-time AI analysis. Since we use on-device processing, your video is never recorded or uploaded.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-q">Q: Can I use it offline?</span>
+            <p>A: Absolutely. All recognition algorithms and exercise records run locally on your phone. No internet connection is required, making it perfect for use on any court.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-q">Q: How do I get the best recognition results?</span>
+            <p>A: We recommend placing your phone 3-5 meters to your side, ensuring your entire body (head to toe) is within the frame. Sufficient lighting will significantly improve accuracy.</p>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-q">Q: What if the app identifies the wrong racket hand?</span>
+            <p>A: You can change your racket hand preference (Left/Right) in the app's "Help Center," and the system will automatically adjust the recognition logic.</p>
+        </div>
+
+        <div class="contact-box">
+            <h3>Still have questions?</h3>
+            <p>We value your feedback. Feel free to contact the developer via email:</p>
+            <p><a href="mailto:TennisBee@qq.com">TennisBee@qq.com</a></p>
+        </div>
+
+        <footer>
+            &copy; 2026 TennisBee. <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+
+    <script>
+        (function() {
+            var userLang = navigator.language || navigator.userLanguage; 
+            if (userLang.toLowerCase().indexOf('zh') !== -1) {
+                document.getElementById('support-zh').style.display = 'block';
+                document.title = "技术支持 - TennisBee";
+            } else {
+                document.getElementById('support-en').style.display = 'block';
+                document.title = "Technical Support - TennisBee";
+            }
+        })();
+    </script>
 </body>
 </html>
