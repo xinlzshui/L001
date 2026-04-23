@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隐私政策 - TennisBee</title>
+    <title>Privacy Policy - TennisBee</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #f9f9f9; }
         .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
@@ -13,10 +13,12 @@
         .highlight { background-color: #eef6ff; padding: 15px; border-radius: 5px; border-left: 4px solid #007aff; }
         footer { margin-top: 50px; text-align: center; font-size: 0.9em; color: #888; }
         ul { padding-left: 20px; }
+        /* 默认隐藏两个语言版本，由 JS 控制显示 */
+        #content-zh, #content-en { display: none; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div id="content-zh" class="container">
         <h1>隐私政策</h1>
         <p><strong>最近更新日期：2026年4月23日</strong></p>
         
@@ -44,7 +46,7 @@
         <p>为了极致的隐私保护，本应用：</p>
         <ul>
             <li>不集成任何第三方广告插件。</li>
-            <li>不集成任何第三方行为统计工具（如 Firebase、TalkingData 等）。</li>
+            <li>不集成任何第三方行为统计工具。</li>
             <li>不设账户体系，无需注册。</li>
         </ul>
 
@@ -55,5 +57,59 @@
             &copy; 2026 TennisBee. 保留所有权利。
         </footer>
     </div>
+
+    <div id="content-en" class="container">
+        <h1>Privacy Policy</h1>
+        <p><strong>Last Updated: April 23, 2026</strong></p>
+        
+        <p class="highlight">
+            <strong>Our Commitment:</strong> TennisBee is a fully <strong>on-device, offline-running</strong> application. We respect and protect your privacy. All core analysis functions are performed on your device; no internet connection is required, and no data will be uploaded to any server.
+        </p>
+
+        <h2>1. Permission Usage</h2>
+        <p><strong>Camera Permission:</strong> This app requires camera access to capture your tennis swings. The video stream is processed in memory for real-time pose recognition. Once analysis is complete, it is immediately released. We <strong>never record, store, or upload</strong> your videos.</p>
+        <p><strong>Photo Library Permission:</strong> If you choose to import videos for analysis, the app will request access to your photo library. All video processing is performed locally.</p>
+
+        <h2>2. Data Collection and Processing</h2>
+        <p><strong>Human Pose Data:</strong> We extract pose landmark coordinates for motion correction. This data consists of anonymous digital coordinates and is used only during analysis, with no persistent storage.</p>
+        <p><strong>Exercise Records:</strong> This app only records the number of swings. These records are <strong>stored exclusively in your local device database</strong>. We have no access to and cannot obtain this data.</p>
+
+        <h2>3. Your Rights</h2>
+        <p>Since data is only stored locally, you can manage your privacy at any time by:</p>
+        <ul>
+            <li>Withdrawing camera or photo library permissions in system settings.</li>
+            <li>Viewing your exercise records within the app.</li>
+            <li>Permanently deleting all local data by uninstalling the app.</li>
+        </ul>
+
+        <h2>4. Third-party SDKs and Services</h2>
+        <p>For maximum privacy, this app:</p>
+        <ul>
+            <li>Does not integrate any third-party advertising plugins.</li>
+            <li>Does not integrate any third-party behavioral analytics tools.</li>
+            <li>Does not have an account system; no registration is required.</li>
+        </ul>
+
+        <h2>5. Contact Us</h2>
+        <p>If you have any privacy-related questions, please contact: <strong>TennisBee@qq.com</strong></p>
+
+        <footer>
+            &copy; 2026 TennisBee. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // 检测系统语言
+        (function() {
+            var userLang = navigator.language || navigator.userLanguage; 
+            if (userLang.toLowerCase().indexOf('zh') !== -1) {
+                document.getElementById('content-zh').style.display = 'block';
+                document.title = "隐私政策 - TennisBee";
+            } else {
+                document.getElementById('content-en').style.display = 'block';
+                document.title = "Privacy Policy - TennisBee";
+            }
+        })();
+    </script>
 </body>
 </html>
