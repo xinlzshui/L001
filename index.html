@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TennisBee - 你的随身网球 AI 教练</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #fff; }
+        
+        /* 导航栏样式 */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: rgba(255, 255, 255, 0.95); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #f0f0f0; backdrop-filter: blur(10px); }
+        .nav-logo img { height: 40px; width: auto; display: block; }
+        .nav-right { display: flex; gap: 25px; align-items: center; font-size: 15px; }
+        .nav-right a { text-decoration: none; color: #555; font-weight: 500; transition: color 0.2s; }
+        .nav-right a:hover, .nav-right a.active { color: #007aff; }
+        .btn-download { background-color: #007aff; color: white !important; padding: 8px 20px; border-radius: 20px; font-weight: bold; }
+        .btn-download:hover { background-color: #0056b3; }
+
+        /* 首屏横幅 */
+        .hero { text-align: center; padding: 80px 20px 60px; background-color: #f9f9f9; }
+        .hero h1 { font-size: 42px; color: #111; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .hero p { font-size: 20px; color: #666; max-width: 600px; margin: 0 auto 30px; }
+
+        /* 功能展示区 */
+        .feature-section { padding: 80px 5%; max-width: 1100px; margin: 0 auto; }
+        .feature-row { display: flex; align-items: center; justify-content: space-between; gap: 50px; margin-bottom: 80px; }
+        .feature-row.reverse { flex-direction: row-reverse; }
+        .feature-text { flex: 1; }
+        .feature-text h2 { font-size: 28px; color: #007aff; margin-bottom: 15px; }
+        .feature-text p { font-size: 17px; color: #555; line-height: 1.7; }
+        .feature-image { flex: 1; background: #eef6ff; border-radius: 20px; aspect-ratio: 4/3; display: flex; justify-content: center; align-items: center; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .feature-image img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* 占位提示文字（当没有真实图片时显示） */
+        .image-placeholder-text { color: #007aff; font-weight: bold; position: absolute; }
+
+        /* 联系我们底部 */
+        .contact-section { background: #007aff; color: white; text-align: center; padding: 60px 20px; }
+        .contact-section h2 { margin-top: 0; font-size: 28px; }
+        .contact-section p { font-size: 18px; margin-bottom: 20px; }
+        .contact-section a { color: white; font-weight: bold; text-decoration: underline; font-size: 20px; }
+        
+        footer { text-align: center; padding: 30px; font-size: 14px; color: #888; background: #f9f9f9; }
+
+        /* 响应式设计：手机端自动变为上下排列 */
+        @media (max-width: 768px) {
+            .feature-row, .feature-row.reverse { flex-direction: column; text-align: center; gap: 30px; }
+            .hero h1 { font-size: 32px; }
+            .nav-right a:not(.btn-download) { display: none; } /* 手机端简化导航 */
+        }
+
+        #home-zh, #home-en { display: none; }
+    </style>
+</head>
+<body>
+    <div id="home-zh">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <img src="logo.png" alt="TennisBee Logo">
+            </div>
+            <div class="nav-right">
+                <a href="index.html" class="active">首页</a>
+                <a href="support.html">技术支持</a>
+                <a href="privacy.html">隐私政策</a>
+                <a href="#" class="btn-download">下载 App</a>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <h1>你的随身网球 AI 教练</h1>
+            <p>100% 本地离线运行，实时追踪 3D 姿态，精准分析你的每一次挥拍。</p>
+        </header>
+
+        <section class="feature-section">
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h2>正手实时挥拍分析</h2>
+                    <p>通过设备端前沿的 MediaPipe 视觉模型，精准追踪 33 个 3D 人体关键点。实时拆解您的正手引拍、转体与随挥动作，并在出现错误动作时提供即时的语音反馈，帮助您建立正确的肌肉记忆。</p>
+                </div>
+                <div class="feature-image">
+                    <span class="image-placeholder-text">配图：正手分析界面截图 (feature1.jpg)</span>
+                    <img src="feature1.jpg" alt="正手挥拍分析" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-text">
+                    <h2>双反实时挥拍分析</h2>
+                    <p>专为双手反拍设计的检测逻辑，深度剖析重心转移与发力结构。智能识别击球点是否过晚、转体是否充分，以数据驱动您的网球技术进阶。</p>
+                </div>
+                <div class="feature-image">
+                    <span class="image-placeholder-text">配图：双反分析界面截图 (feature2.jpg)</span>
+                    <img src="feature2.jpg" alt="双反挥拍分析" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h2>日常挥拍练习</h2>
+                    <p>自定义组数与每组次数，启动后 AI 将自动为您精准计数。智能管理休息间隔，完成后自动生成并保存本地练习报表，让您的每一次汗水都有迹可循。</p>
+                </div>
+                <div class="feature-image">
+                    <span class="image-placeholder-text">配图：日常练习计数界面截图 (feature3.jpg)</span>
+                    <img src="feature3.jpg" alt="日常挥拍练习" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>需要帮助或有任何建议？</h2>
+            <p>我们期待听到您的声音，共同打磨更纯粹的网球工具。</p>
+            <a href="mailto:TennisBee@qq.com">TennisBee@qq.com</a>
+        </section>
+
+        <footer>&copy; 2026 TennisBee. 保留所有权利。</footer>
+    </div>
+
+    <div id="home-en">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <img src="logo.png" alt="TennisBee Logo">
+            </div>
+            <div class="nav-right">
+                <a href="index.html" class="active">Home</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="#" class="btn-download">Download App</a>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <h1>Your Pocket AI Tennis Coach</h1>
+            <p>Runs 100% offline. Tracks 3D posture in real-time to analyze every swing with precision.</p>
+        </header>
+
+        <section class="feature-section">
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h2>Real-time Forehand Analysis</h2>
+                    <p>Utilizing edge-based MediaPipe vision models to accurately track 33 3D body landmarks. It breaks down your forehand preparation, rotation, and follow-through in real-time, providing instant audio feedback on incorrect movements to help build proper muscle memory.</p>
+                </div>
+                <div class="feature-image">
+                    <span class="image-placeholder-text">Image: Forehand Analysis (feature1.jpg)</span>
+                    <img src="feature1.jpg" alt="Forehand Analysis" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-text">
+                    <h2>Two-handed Backhand Analysis</h2>
+                    <p>Detection logic specifically designed for the two-handed backhand, deeply analyzing weight transfer and power structure. It smartly identifies issues like late contact points or insufficient rotation, driving your technique advancement with data.</p>
+                </div>
+                <div class="feature-image">
+                    <span class="image-placeholder-text">Image: Backhand Analysis (feature2.jpg)</span>
+                    <img src="feature2.jpg" alt="Backhand Analysis" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h2>Daily Swing Practice</h2>
+                    <p>Customize your sets and reps. Once started, the AI will accurately count for you. It intelligently manages rest intervals and automatically generates a local practice report upon completion, ensuring every drop of sweat is tracked.</p>
+                </div>
+                <div class="feature-image">
+                    <span class="image-placeholder-text">Image: Daily Practice (feature3.jpg)</span>
+                    <img src="feature3.jpg" alt="Daily Practice" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Need help or have suggestions?</h2>
+            <p>We look forward to hearing from you to refine this pure tennis tool together.</p>
+            <a href="mailto:TennisBee@qq.com">TennisBee@qq.com</a>
+        </section>
+
+        <footer>&copy; 2026 TennisBee. All rights reserved.</footer>
+    </div>
+
+    <script>
+        (function() {
+            var userLang = navigator.language || navigator.userLanguage; 
+            if (userLang.toLowerCase().indexOf('zh') !== -1) {
+                document.getElementById('home-zh').style.display = 'block';
+                document.title = "TennisBee - 你的随身网球 AI 教练";
+            } else {
+                document.getElementById('home-en').style.display = 'block';
+                document.title = "TennisBee - AI Tennis Coach";
+            }
+        })();
+    </script>
+</body>
+</html>
