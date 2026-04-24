@@ -5,101 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - TennisBee</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #f9f9f9; }
-        .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h1 { border-bottom: 2px solid #007aff; padding-bottom: 10px; color: #007aff; font-size: 24px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
+        
+        /* 导航栏样式 (全局统一) */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: rgba(255, 255, 255, 0.95); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #f0f0f0; backdrop-filter: blur(10px); }
+        .nav-logo img { height: 40px; width: auto; display: block; }
+        .nav-right { display: flex; gap: 25px; align-items: center; font-size: 15px; }
+        .nav-right a { text-decoration: none; color: #555; font-weight: 500; transition: color 0.2s; }
+        .nav-right a:hover, .nav-right a.active { color: #007aff; }
+        .btn-download { background-color: #007aff; color: white !important; padding: 8px 20px; border-radius: 20px; font-weight: bold; }
+        .btn-download:hover { background-color: #0056b3; }
+
+        /* 内容区样式 */
+        .container { background: #fff; max-width: 800px; margin: 40px auto; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { border-bottom: 2px solid #007aff; padding-bottom: 10px; color: #007aff; font-size: 24px; margin-top: 0; }
         h2 { margin-top: 30px; color: #444; border-left: 4px solid #007aff; padding-left: 10px; font-size: 18px; }
         p { margin: 15px 0; }
         .highlight { background-color: #eef6ff; padding: 15px; border-radius: 5px; border-left: 4px solid #007aff; }
-        footer { margin-top: 50px; text-align: center; font-size: 0.9em; color: #888; }
+        footer { margin-top: 50px; text-align: center; font-size: 0.9em; color: #888; padding-bottom: 30px; }
         ul { padding-left: 20px; }
-        /* 默认隐藏两个语言版本，由 JS 控制显示 */
+        
+        @media (max-width: 768px) {
+            .nav-right a:not(.btn-download) { display: none; }
+            .container { margin: 20px; padding: 20px; }
+        }
+
+        /* 默认隐藏，由 JS 控制显示 */
         #content-zh, #content-en { display: none; }
     </style>
 </head>
 <body>
-    <div id="content-zh" class="container">
-        <h1>隐私政策</h1>
-        <p><strong>最近更新日期：2026年4月23日</strong></p>
-        
-        <p class="highlight">
-            <strong>核心承诺：</strong> TennisBee 是一款完全<strong>本地化、离线运行</strong>的应用。我们尊重并保护您的隐私，应用内的所有核心分析功能均在您的设备上完成，无需联网，也不会将数据上传至任何服务器。
-        </p>
-
-        <h2>1. 权限使用说明</h2>
-        <p><strong>摄像头权限：</strong> 本应用需要使用摄像头捕捉您的网球挥拍动作。视频流仅在内存中进行实时姿态识别，分析完成后立即释放，<strong>绝不进行录制、存储或上传</strong>。</p>
-        <p><strong>相册权限：</strong> 如果您选择导出视频进行分析，本应用会请求访问相册。所有视频处理均在本地完成。</p>
-
-        <h2>2. 数据收集与处理</h2>
-        <p><strong>人体姿态数据：</strong> 我们提取姿态关键点坐标进行动作纠错。这些数据是匿名数字化坐标，且仅在分析时使用，不进行持久化保存。</p>
-        <p><strong>练习记录：</strong> 本应用仅记录挥拍次数。这些记录<strong>仅存储在您的手机本地数据库中</strong>。我们无法访问，也无法获取这些数据。</p>
-
-        <h2>3. 您的权利</h2>
-        <p>由于数据仅存储在本地，您可以随时通过以下方式管理您的隐私：</p>
-        <ul>
-            <li>在系统设置中随时撤回摄像头或相册权限。</li>
-            <li>在应用内查看练习记录。</li>
-            <li>通过卸载应用永久删除所有本地数据。</li>
-        </ul>
-
-        <h2>4. 第三方 SDK 与服务</h2>
-        <p>为了极致的隐私保护，本应用：</p>
-        <ul>
-            <li>不集成任何第三方广告插件。</li>
-            <li>不集成任何第三方行为统计工具。</li>
-            <li>不设账户体系，无需注册。</li>
-        </ul>
-
-        <h2>5. 联系我们</h2>
-        <p>如有任何隐私疑问，请联系：<strong>TennisBee@qq.com</strong></p>
-
-        <footer>
-            &copy; 2026 TennisBee. 保留所有权利。
-        </footer>
+    <div id="content-zh">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <img src="logo.png" alt="TennisBee Logo" onerror="this.style.display='none'">
+            </div>
+            <div class="nav-right">
+                <a href="index.html">首页</a>
+                <a href="support.html">技术支持</a>
+                <a href="privacy.html" class="active">隐私政策</a>
+                <a href="#" class="btn-download">下载 App</a>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>隐私政策</h1>
+            <p><strong>最近更新日期：2026年4月23日</strong></p>
+            <p class="highlight">
+                <strong>核心承诺：</strong> TennisBee 是一款完全<strong>本地化、离线运行</strong>的应用。我们尊重并保护您的隐私，应用内的所有核心分析功能均在您的设备上完成，无需联网，也不会将数据上传至任何服务器。
+            </p>
+            <h2>1. 权限使用说明</h2>
+            <p><strong>摄像头权限：</strong> 本应用需要使用摄像头捕捉您的网球挥拍动作。视频流仅在内存中进行实时姿态识别，分析完成后立即释放，<strong>绝不进行录制、存储或上传</strong>。</p>
+            <p><strong>相册权限：</strong> 如果您选择导出视频进行分析，本应用会请求访问相册。所有视频处理均在本地完成。</p>
+            <h2>2. 数据收集与处理</h2>
+            <p><strong>人体姿态数据：</strong> 我们提取姿态关键点坐标进行动作纠错。这些数据是匿名数字化坐标，且仅在分析时使用，不进行持久化保存。</p>
+            <p><strong>练习记录：</strong> 本应用仅记录挥拍次数。这些记录<strong>仅存储在您的手机本地数据库中</strong>。我们无法访问，也无法获取这些数据。</p>
+            <h2>3. 您的权利</h2>
+            <p>由于数据仅存储在本地，您可以随时通过以下方式管理您的隐私：</p>
+            <ul>
+                <li>在系统设置中随时撤回摄像头或相册权限。</li>
+                <li>在应用内查看练习记录。</li>
+                <li>通过卸载应用永久删除所有本地数据。</li>
+            </ul>
+            <h2>4. 第三方 SDK 与服务</h2>
+            <p>为了极致的隐私保护，本应用：</p>
+            <ul>
+                <li>不集成任何第三方广告插件。</li>
+                <li>不集成任何第三方行为统计工具。</li>
+                <li>不设账户体系，无需注册。</li>
+            </ul>
+            <h2>5. 联系我们</h2>
+            <p>如有任何隐私疑问，请联系：<strong>TennisBee@qq.com</strong></p>
+        </div>
+        <footer>&copy; 2026 TennisBee. 保留所有权利。</footer>
     </div>
 
-    <div id="content-en" class="container">
-        <h1>Privacy Policy</h1>
-        <p><strong>Last Updated: April 23, 2026</strong></p>
-        
-        <p class="highlight">
-            <strong>Our Commitment:</strong> TennisBee is a fully <strong>on-device, offline-running</strong> application. We respect and protect your privacy. All core analysis functions are performed on your device; no internet connection is required, and no data will be uploaded to any server.
-        </p>
-
-        <h2>1. Permission Usage</h2>
-        <p><strong>Camera Permission:</strong> This app requires camera access to capture your tennis swings. The video stream is processed in memory for real-time pose recognition. Once analysis is complete, it is immediately released. We <strong>never record, store, or upload</strong> your videos.</p>
-        <p><strong>Photo Library Permission:</strong> If you choose to import videos for analysis, the app will request access to your photo library. All video processing is performed locally.</p>
-
-        <h2>2. Data Collection and Processing</h2>
-        <p><strong>Human Pose Data:</strong> We extract pose landmark coordinates for motion correction. This data consists of anonymous digital coordinates and is used only during analysis, with no persistent storage.</p>
-        <p><strong>Exercise Records:</strong> This app only records the number of swings. These records are <strong>stored exclusively in your local device database</strong>. We have no access to and cannot obtain this data.</p>
-
-        <h2>3. Your Rights</h2>
-        <p>Since data is only stored locally, you can manage your privacy at any time by:</p>
-        <ul>
-            <li>Withdrawing camera or photo library permissions in system settings.</li>
-            <li>Viewing your exercise records within the app.</li>
-            <li>Permanently deleting all local data by uninstalling the app.</li>
-        </ul>
-
-        <h2>4. Third-party SDKs and Services</h2>
-        <p>For maximum privacy, this app:</p>
-        <ul>
-            <li>Does not integrate any third-party advertising plugins.</li>
-            <li>Does not integrate any third-party behavioral analytics tools.</li>
-            <li>Does not have an account system; no registration is required.</li>
-        </ul>
-
-        <h2>5. Contact Us</h2>
-        <p>If you have any privacy-related questions, please contact: <strong>TennisBee@qq.com</strong></p>
-
-        <footer>
-            &copy; 2026 TennisBee. All rights reserved.
-        </footer>
+    <div id="content-en">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <img src="logo.png" alt="TennisBee Logo" onerror="this.style.display='none'">
+            </div>
+            <div class="nav-right">
+                <a href="index.html">Home</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html" class="active">Privacy Policy</a>
+                <a href="#" class="btn-download">Download</a>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p><strong>Last Updated: April 23, 2026</strong></p>
+            <p class="highlight">
+                <strong>Our Commitment:</strong> TennisBee is a fully <strong>on-device, offline-running</strong> application. We respect and protect your privacy. All core analysis functions are performed on your device; no internet connection is required, and no data will be uploaded to any server.
+            </p>
+            <h2>1. Permission Usage</h2>
+            <p><strong>Camera Permission:</strong> This app requires camera access to capture your tennis swings. The video stream is processed in memory for real-time pose recognition. Once analysis is complete, it is immediately released. We <strong>never record, store, or upload</strong> your videos.</p>
+            <p><strong>Photo Library Permission:</strong> If you choose to import videos for analysis, the app will request access to your photo library. All video processing is performed locally.</p>
+            <h2>2. Data Collection and Processing</h2>
+            <p><strong>Human Pose Data:</strong> We extract pose landmark coordinates for motion correction. This data consists of anonymous digital coordinates and is used only during analysis, with no persistent storage.</p>
+            <p><strong>Exercise Records:</strong> This app only records the number of swings. These records are <strong>stored exclusively in your local device database</strong>. We have no access to and cannot obtain this data.</p>
+            <h2>3. Your Rights</h2>
+            <p>Since data is only stored locally, you can manage your privacy at any time by:</p>
+            <ul>
+                <li>Withdrawing camera or photo library permissions in system settings.</li>
+                <li>Viewing your exercise records within the app.</li>
+                <li>Permanently deleting all local data by uninstalling the app.</li>
+            </ul>
+            <h2>4. Third-party SDKs and Services</h2>
+            <p>For maximum privacy, this app:</p>
+            <ul>
+                <li>Does not integrate any third-party advertising plugins.</li>
+                <li>Does not integrate any third-party behavioral analytics tools.</li>
+                <li>Does not have an account system; no registration is required.</li>
+            </ul>
+            <h2>5. Contact Us</h2>
+            <p>If you have any privacy-related questions, please contact: <strong>TennisBee@qq.com</strong></p>
+        </div>
+        <footer>&copy; 2026 TennisBee. All rights reserved.</footer>
     </div>
 
     <script>
-        // 检测系统语言
         (function() {
             var userLang = navigator.language || navigator.userLanguage; 
             if (userLang.toLowerCase().indexOf('zh') !== -1) {
