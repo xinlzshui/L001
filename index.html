@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TennisBee - 你的随身网球 AI 教练</title>
+    <title>TennisBee - AI Tennis Coach</title>
     <meta name="google-site-verification" content="Nt8qM1twoR9EDYNomLeae_aQYZjoOvoI2hdfCUvloQY" />
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #fff; }
@@ -31,9 +31,6 @@
         .feature-text p { font-size: 17px; color: #555; line-height: 1.7; }
         .feature-image { flex: 1; background: #eef6ff; border-radius: 20px; aspect-ratio: 4/3; display: flex; justify-content: center; align-items: center; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
         .feature-image img { width: 100%; height: 100%; object-fit: cover; }
-        
-        /* 占位提示文字（当没有真实图片时显示） */
-        .image-placeholder-text { color: #007aff; font-weight: bold; position: absolute; }
 
         /* 联系我们底部 */
         .contact-section { background: #007aff; color: white; text-align: center; padding: 60px 20px; }
@@ -54,65 +51,6 @@
     </style>
 </head>
 <body>
-    <div id="home-zh">
-        <nav class="navbar">
-            <div class="nav-logo">
-                <img src="logo.png" alt="TennisBee Logo">
-            </div>
-            <div class="nav-right">
-                <a href="index.html" class="active">首页</a>
-                <a href="support.html">技术支持</a>
-                <a href="privacy.html">隐私政策</a>
-                <a href="#" class="btn-download">下载 App</a>
-            </div>
-        </nav>
-
-        <header class="hero">
-            <h1>你的随身网球 AI 教练</h1>
-            <p>100%本地离线运行，实时追踪动作姿态，精准分析你的每一次挥拍。</p>
-        </header>
-
-        <section class="feature-section">
-            <div class="feature-row">
-                <div class="feature-text">
-                    <h2>正手实时挥拍分析</h2>
-                    <p>通过设备端前沿的视觉检测模型，精准追踪人体关键点。实时拆解您的正手引拍、转体与随挥动作，并在出现错误动作时提供即时的语音反馈，帮助您建立正确的肌肉记忆。</p>
-                </div>
-                <div class="feature-image">
-                    <img src="feature1.jpg" alt="正手挥拍分析" onerror="this.style.display='none'">
-                </div>
-            </div>
-
-            <div class="feature-row reverse">
-                <div class="feature-text">
-                    <h2>双反实时挥拍分析</h2>
-                    <p>专为双手反拍设计的检测逻辑，深度剖析重心转移与发力结构。智能识别引拍是否充分、转体是否充分，以数据驱动您的网球技术进阶。</p>
-                </div>
-                <div class="feature-image">
-                    <img src="feature2.jpg" alt="双反挥拍分析" onerror="this.style.display='none'">
-                </div>
-            </div>
-
-            <div class="feature-row">
-                <div class="feature-text">
-                    <h2>日常挥拍练习</h2>
-                    <p>自定义组数与每组次数，启动后 AI 将自动为您精准计数。智能管理休息间隔，完成后自动生成并保存本地练习报表，让您的每一次汗水都有迹可循。</p>
-                </div>
-                <div class="feature-image">
-                    <img src="feature3.jpg" alt="日常挥拍练习" onerror="this.style.display='none'">
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-section">
-            <h2>需要帮助或有任何建议？</h2>
-            <p>我们期待听到您的声音，共同打磨更纯粹的网球工具。</p>
-            <a href="mailto:TennisBee@qq.com">TennisBee@qq.com</a>
-        </section>
-
-        <footer>&copy; 2026 TennisBee. 保留所有权利。</footer>
-    </div>
-
     <div id="home-en">
         <nav class="navbar">
             <div class="nav-logo">
@@ -172,6 +110,65 @@
         <footer>&copy; 2026 TennisBee. All rights reserved.</footer>
     </div>
 
+    <div id="home-zh">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <img src="logo.png" alt="TennisBee Logo">
+            </div>
+            <div class="nav-right">
+                <a href="index.html" class="active">首页</a>
+                <a href="support.html">技术支持</a>
+                <a href="privacy.html">隐私政策</a>
+                <a href="#" class="btn-download">下载 App</a>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <h1>你的随身网球 AI 教练</h1>
+            <p>100%本地离线运行，实时追踪动作姿态，精准分析你的每一次挥拍。</p>
+        </header>
+
+        <section class="feature-section">
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h2>正手实时挥拍分析</h2>
+                    <p>通过设备端前沿的视觉检测模型，精准追踪人体关键点。实时拆解您的正手引拍、转体与随挥动作，并在出现错误动作时提供即时的语音反馈，帮助您建立正确的肌肉记忆。</p>
+                </div>
+                <div class="feature-image">
+                    <img src="feature1.jpg" alt="正手挥拍分析" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-text">
+                    <h2>双反实时挥拍分析</h2>
+                    <p>专为双手反拍设计的检测逻辑，深度剖析重心转移与发力结构。智能识别引拍是否充分、转体是否充分，以数据驱动您的网球技术进阶。</p>
+                </div>
+                <div class="feature-image">
+                    <img src="feature2.jpg" alt="双反挥拍分析" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h2>日常挥拍练习</h2>
+                    <p>自定义组数与每组次数，启动后 AI 将自动为您精准计数。智能管理休息间隔，完成后自动生成并保存本地练习报表，让您的每一次汗水都有迹可循。</p>
+                </div>
+                <div class="feature-image">
+                    <img src="feature3.jpg" alt="日常挥拍练习" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>需要帮助或有任何建议？</h2>
+            <p>我们期待听到您的声音，共同打磨更纯粹的网球工具。</p>
+            <a href="mailto:TennisBee@qq.com">TennisBee@qq.com</a>
+        </section>
+
+        <footer>&copy; 2026 TennisBee. 保留所有权利。</footer>
+    </div>
+
     <script>
         (function() {
             var userLang = navigator.language || navigator.userLanguage; 
@@ -180,7 +177,7 @@
                 document.title = "TennisBee - 你的随身网球 AI 教练";
             } else {
                 document.getElementById('home-en').style.display = 'block';
-                document.title = "TennisBee - AI Tennis Coach";
+                /* 默认 title 已经是英文，无需再次修改，提高执行效率 */
             }
         })();
     </script>
